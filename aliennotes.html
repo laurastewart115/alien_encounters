@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!-- Current Build: v1.0
+
+ v0.2 Changelog:
+I moved all js code out of this html file and into seperate .js file.
+Think we should remove the sawship radio at line 28, redundant.
+Added default option to drop down as "Please Select"
+Refactored all variables with camelCase for readability
+
+v0.3 Changelog:
+Removed sawShip radio
+Added a link to return to main menu
+
+v0.4 Changelog:
+Added placeholder for UFO Description
+
+v0.5 Changelog
+Added time form field and error messages-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Alien Encounters</title>
+
+    <link rel="stylesheet" type="text/css" href="alienstyles.css">
+    <script src="alienstorage.js"></script>
+</head>
+
+    <body>
+        <main>
+            <header>Alien Encounters</header>
+
+            <form method="post">
+
+                <section>
+                    <div class="title">Type of Encounter*</div>
+                    <select name="encounter" id="encounter">
+                        <option>- Please Select -</option>
+                        <option>Abduction</option>
+                        <option>UFO Sighting</option>
+                        <option>Telepathic Connection</option>
+                        <option>Other</option>
+                    </select>
+                    <input type="text" id="specify" style="display:none" name="specify" placeholder="Please specify">
+                    <div class="label">Did you see an alien? <input type="checkbox" id="sawAlien" name="sawAlien" value="true"></div>
+                </section>
+
+                <section id=describeAlien style="display:none">
+                    <div class="title">Alien Description*</div>
+                    <textarea id="describeAlienText" name="describeAlien" rows="8" placeholder="What did it look and sound like?"></textarea>
+                </section>
+
+                <section id=describeUFO style="display:none">
+                    <div class="title">UFO Description*</div>
+                    <textarea id="describeUFOText" name="ufoDetails" rows="4" placeholder="What did you see?"></textarea>
+                </section>
+
+                <section>
+                    <div class="title">Notes*</div>
+                    <textarea id="notesText" name="notes" rows="8" placeholder="Describe your experience."></textarea>
+                </section>
+
+                <section>
+                    <div class="title">Time*   <span style="font-size:15px">(24 hour clock)</span></div>
+                    <input type="text" id="time" name="time" placeholder="00:00">
+                    <div id="errorFormat">Please use this format: 00:00</div>
+                    <div id="errorInvalid">That time is invalid.</div>
+                </section>
+
+                <section>
+                    <input type="submit" id="submit" name="submit" value="Save">
+                    <div class="label">* marks a required field.</div>
+                </section>
+            </form>
+
+            <a href="mainmenu.html">
+                <div class="button">Main Menu</div>
+            </a>
+
+        </main>
+
+    </body>
+
+</html>
